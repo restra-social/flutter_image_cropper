@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.yalantis.ucrop.UCrop;
 
 import java.io.File;
@@ -18,12 +20,12 @@ import io.flutter.plugin.common.PluginRegistry;
 import static android.app.Activity.RESULT_OK;
 
 public class ImageCropperDelegate implements PluginRegistry.ActivityResultListener {
-    private final Activity activity;
+    private final AppCompatActivity activity;
     private MethodChannel.Result pendingResult;
     private MethodCall methodCall;
     private FileUtils fileUtils;
 
-    public ImageCropperDelegate(Activity activity) {
+    public ImageCropperDelegate(AppCompatActivity activity) {
         this.activity = activity;
         fileUtils = new FileUtils();
     }
